@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Kids Academy - Class of 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Dark Blue */
+            color: #ecf0f1; /* Light Gray */
+            transition: background-color 0.5s ease; /* Smooth background color transition */
+        }
+
+        header {
+            background-color: #922b21; /* Maroon */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.5s ease; /* Smooth background color transition */
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.5s ease; /* Smooth box shadow transition */
+        }
+
+        .person {
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease; /* Smooth opacity transition */
+        }
+
+        .person img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Add a class to trigger the fade-in effect */
+        .person.show {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #922b21; /* Maroon */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #welcome-message,
+        #appreciation-message {
+            display: none;
+            background-color: #3498db; /* Blue */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Global Kids Academy - Class of 2024</h1>
+    </header>
+
+    <section>
+        <div id="welcome-message">
+            <p>Hello there, welcome to Global Kids Academy Class of 2024! We hope you have a good time. Thank you! ❤️</p>
+        </div>
+
+        <h2>Welcome to our class website!</h2>
+        <p>This is the official website for the Global Kids Academy Class of 2024. Stay tuned for updates and information
+            throughout the academic year.</p>
+
+        <div class="person">
+            <img src="path/to/first_person_image.jpg" alt="First Person">
+            <h3>First Person</h3>
+            <p>Details about the first person go here.</p>
+        </div>
+
+        <div class="person">
+            <img src="path/to/second_person_image.jpg" alt="Second Person">
+            <h3>Second Person</h3>
+            <p>Details about the second person go here.</p>
+        </div>
+
+        <!-- Add more person sections as needed -->
+
+        <div id="appreciation-message">
+            <p>Thank you for visiting our website. We hope you have a splendid day. Goodbye! 👋 ❤️</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Website created by Abdul Hafiz Ismaila Jatau from SS3 Mars</p>
+    </footer>
+
+    <script>
+        // Trigger the fade-in effect by adding the 'show' class to the welcome message
+        document.addEventListener("DOMContentLoaded", function () {
+            var welcomeMessage = document.getElementById('welcome-message');
+            welcomeMessage.style.display = 'block';
+            welcomeMessage.classList.add('show');
+        });
+
+        // Check if the last person element is reached, then show appreciation message
+        document.addEventListener("DOMContentLoaded", function () {
+            var personElements = document.querySelectorAll('.person');
+            var appreciationMessage = document.getElementById('appreciation-message');
+
+            personElements[personElements.length - 1].addEventListener('transitionend', function () {
+                appreciationMessage.style.display = 'block';
+                appreciationMessage.classList.add('show');
+            });
+        });
+    </script>
+</body>
+
+</html>
